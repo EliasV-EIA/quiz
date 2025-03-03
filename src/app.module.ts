@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { DishesModule } from './dishes/dishes.module';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { PlacasModule } from './placas/placas.module';
 
 @Module({
   imports: [DishesModule,
@@ -15,7 +16,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
         autoLoadEntities: true,
         synchronize: true, // Recuerda cambiar a false en producción
       }),
-    }),//Configuracion de la base de datos
+    }),
+    PlacasModule,//Configuracion de la base de datos
   ],
   controllers: [AppController],
   providers: [AppService],
